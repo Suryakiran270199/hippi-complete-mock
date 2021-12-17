@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/signup.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>Login Page</title>
+
+  <!--links for mobile number label-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="main-layout">
+    <div class="layout">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="../Assets/images/hippiimage.jpeg" style="width: 640px;height: 830px;" />
+          </div>
+          <div class="col">
+            <img src="../Assets/images/hippiicon.jpeg" />
+            <h4>Create a new account</h4>
+            <p>Registration with Mobile/Email OTP Verification</p>
+
+            <form>
+              <div class="row">
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Name*</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="" required>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="surname" value=""
+                      required>
+                  </div>
+                </div>
+
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Mobile Number*</label><br />
+                <input type="tel" id="phone" style="width: 630px;" class="form-control" name="number" value=""
+                  id="mobileNumber" required>
+
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email(Optional)</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="" required />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pswd" name="password" value="" required />
+                <i class="far fa-eye-slash" id="eye-icon" onclick="hideShowPswd(this)"></i>
+              </div>
+
+              <div class="row">
+                <label for="exampleFormControlInput1" class="form-label">Date of Birth</label><br />
+                <div class="col-md-3">
+                  <select id="day" name="day" class="form-control" required>
+                    <option value="days">Days</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select id="month" name="month" class="form-control" required>
+                    <option value="month">Month</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select id="year" name="year" class="form-control" required>
+                    <option value="year">Year</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Gender*</label>
+                <div class="row">
+                  <div class="col"
+                    style="border: 2px groove rgb(233, 231, 231) ;height: 35px;width:15px;border-radius: 5px;margin: 5px;">
+                    <input type="radio" name="gender" value="male" required> Male<br>
+                  </div>
+                  <div class="col"
+                    style="border: 2px groove rgb(233, 231, 231) ;height: 35px;width:15px;border-radius: 5px;margin: 5px;">
+                    <input type="radio" name="gender" value="female" required> Female<br>
+                  </div>
+                  <div class="col"
+                    style="border: 2px groove rgb(233, 231, 231) ;height: 35px;width:15px;border-radius: 5px;margin: 5px;">
+                    <input type="radio" name="gender" value="other" required> Other.
+                  </div>
+                </div>
+              </div>
+              <p style="font-size: 13px;">By clicking Sign Up,you agree to our Terms,Data Policy and Cookie Policy.
+                You may receive OTP notification from us and can opt out at any time.
+              </p>
+              <div class="g-recaptcha" name="recaptcha" id="rcaptcha"
+                data-sitekey="6Ldb3l8UAAAAAO8xBJ1q_GLfDn2kkcQNBCqC02GU"></div>
+              <span id="captcha" style="color:red" /></span> <br /><!-- this will show captcha errors -->
+              <button type="submit" style="width: 630px;" class="btn btn-warning">Sign
+                Up</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script>
+  const phoneInputField = document.querySelector("#phone");
+  phoneInputField.value = "+91 "
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+
+  // function get_action() {
+  $(document).ready(function () {
+
+    $('form').submit(function (e) {
+
+      var formData = new FormData(document.querySelector('form'))
+
+      let user = {
+        name: formData.get('name'),
+        surname: formData.get('surname'),
+        number: formData.get('number'),
+        email: formData.get('email'),
+        password: formData.get('password'),
+        dob: formData.get('year') + '-' + formData.get('month') + '-' + formData.get('day'),
+        gender: formData.get('gender'),
+        captcha: grecaptcha.getResponse()
+      }
+      $.ajax({
+        url: 'http://10.12.50.205:8070/signup',
+        data: user,
+        type: 'POST',
+        success: function (data) {
+          console.log(data)
+        },
+        error: function (err) {
+          console.log(err)
+        }
+
+      });
+      e.preventDefault()
+    })
+  })
+
+  // console.log("hello world:::", formData)
+  // var v = grecaptcha.getResponse();
+  // console.log("hello world2", v)
+  // if (v.length == 0) {
+  //   document.getElementById('captcha').innerHTML = "You can't leave Captcha Code empty";
+  //   return false;
+
+
+  // }
+  // else {
+  //   document.getElementById('captcha').innerHTML = "Captcha completed";
+  //   return true;
+  // }
+
+  //hide & show password:
+  function hideShowPswd(ele) {
+    var x = document.getElementById("pswd");
+    if (x.getAttribute('type') === "password") {
+      x.setAttribute("type", "text");
+      ele.setAttribute("class", "fa fa-eye")
+    }
+    else {
+      x.setAttribute("type", "password");
+      ele.setAttribute("class", "fa fa-eye-slash")
+    }
+  }
+
+  // date of birth code :
+
+  const yearSelect = document.getElementById("year");
+  const monthSelect = document.getElementById("month");
+  const daySelect = document.getElementById("day");
+
+
+
+  const months = ['January', 'February', 'March', 'April',
+    'May', 'June', 'July', 'August', 'September', 'October',
+    'November', 'December'];
+
+
+
+  //Months are always the same
+  (function populateMonths() {
+    for (let i = 0; i < months.length; i++) {
+      const option = document.createElement('option');
+      option.textContent = months[i];
+      monthSelect.appendChild(option);
+    }
+    monthSelect.value;
+  })();
+
+
+
+  let previousDay;
+
+
+
+  function populateDays(month) {
+    //Delete all of the children of the day dropdown
+    //if they do exist
+    while (daySelect.firstChild) {
+      daySelect.removeChild(daySelect.firstChild);
+    }
+    //Holds the number of days in the month
+    let dayNum;
+    //Get the current year
+    let year = yearSelect.value;
+
+
+
+    if (month === 'January' || month === 'March' ||
+      month === 'May' || month === 'July' || month === 'August'
+      || month === 'October' || month === 'December') {
+      dayNum = 31;
+    } else if (month === 'April' || month === 'June'
+      || month === 'September' || month === 'November') {
+      dayNum = 30;
+    } else {
+      //Check for a leap year
+      if (new Date(year, 1, 29).getMonth() === 1) {
+        dayNum = 29;
+      } else {
+        dayNum = 28;
+      }
+    }
+    //Insert the correct days into the day <select>
+    for (let i = 0; i <= dayNum; i++) {
+      const option = document.createElement("option");
+      option.textContent = i;
+      daySelect.appendChild(option);
+    }
+
+    if (previousDay) {
+      daySelect.value = previousDay;
+      if (daySelect.value === "") {
+        daySelect.value = previousDay - 1;
+      }
+      if (daySelect.value === "") {
+        daySelect.value = previousDay - 2;
+      }
+      if (daySelect.value === "") {
+        daySelect.value = previousDay - 3;
+      }
+    }
+  }
+
+
+
+  function populateYears() {
+    //Get the current year as a number
+    let year = new Date().getFullYear();
+    //Make the previous 100 years be an option
+    for (let i = 0; i < 101; i++) {
+      const option = document.createElement("option");
+      option.textContent = year - i;
+      yearSelect.appendChild(option);
+    }
+  }
+
+
+
+  populateDays(monthSelect.value);
+  populateYears();
+
+
+
+  yearSelect.onchange = function () {
+    populateDays(monthSelect.value);
+  }
+  monthSelect.onchange = function () {
+    populateDays(monthSelect.value);
+  }
+  daySelect.onchange = function () {
+    previousDay = daySelect.value;
+  }
+
+
+
+</script>
