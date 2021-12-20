@@ -40,37 +40,38 @@
               <div class="row">
                 <div class="col">
                   <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name*</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="" required>
+                    <label for="name" class="form-label">Name*</label>
+                    <input type="text" class="form-control" id="name" name="name" value="" required>
+                     <div class="error" id="name_error"></div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Surname</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="surname" value=""
+                    <label for="surname" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="surname" name="surname" value=""
                       required>
                   </div>
                 </div>
 
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Mobile Number*</label><br />
+                <label for="number" class="form-label">Mobile Number*</label><br />
                 <input type="tel" id="phone" style="width: 630px;" class="form-control" name="number" value=""
                   id="mobileNumber" required>
 
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email(Optional)</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="" required />
+                <label for="email" class="form-label">Email(Optional)</label>
+                <input type="email" class="form-control" id="email" name="email" value="" required />
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="pswd" name="password" value="" required />
                 <i class="far fa-eye-slash" id="eye-icon" onclick="hideShowPswd(this)"></i>
               </div>
 
               <div class="row">
-                <label for="exampleFormControlInput1" class="form-label">Date of Birth</label><br />
+                <label for="dateOfBirth" class="form-label">Date of Birth</label><br />
                 <div class="col-md-3">
                   <select id="day" name="day" class="form-control" required>
                     <option value="days">Days</option>
@@ -88,11 +89,11 @@
                 </div>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Gender*</label>
+                <label for="gender" class="form-label">Gender*</label>
                 <div class="row">
                   <div class="col"
                     style="border: 2px groove rgb(233, 231, 231) ;height: 35px;width:15px;border-radius: 5px;margin: 5px;">
-                    <input type="radio" name="gender" value="male" required> Male<br>
+                    <input type="radio" name="gender"  value="male" required> Male<br>
                   </div>
                   <div class="col"
                     style="border: 2px groove rgb(233, 231, 231) ;height: 35px;width:15px;border-radius: 5px;margin: 5px;">
@@ -110,8 +111,7 @@
               <div class="g-recaptcha" name="recaptcha" id="rcaptcha"
                 data-sitekey="6Ldb3l8UAAAAAO8xBJ1q_GLfDn2kkcQNBCqC02GU"></div>
               <span id="captcha" style="color:red" /></span> <br /><!-- this will show captcha errors -->
-              <button type="submit" style="width: 630px;" class="btn btn-warning">Sign
-                Up</button>
+              <button style="width: 630px;" class="btn btn-warning">Sign Up</button>
           </div>
           </form>
         </div>
@@ -135,17 +135,17 @@
 
   // function get_action() {
   $(document).ready(function () {
-
+ 
     $('form').submit(function (e) {
 
       var formData = new FormData(document.querySelector('form'))
 
       let user = {
-        name: formData.get('name'),
-        surname: formData.get('surname'),
-        number: formData.get('number'),
+        firstname: formData.get('name'),
+        lastname: formData.get('surname'),
+        phone: formData.get('number'),
         email: formData.get('email'),
-        password: formData.get('password'),
+        pwdHash: formData.get('password'),
         dob: formData.get('year') + '-' + formData.get('month') + '-' + formData.get('day'),
         gender: formData.get('gender'),
         captcha: grecaptcha.getResponse()
@@ -155,6 +155,7 @@
         data: user,
         type: 'POST',
         success: function (data) {
+          window.location.href="/verify.html";
           console.log(data)
         },
         error: function (err) {
@@ -252,7 +253,7 @@
       }
     }
     //Insert the correct days into the day <select>
-    for (let i = 0; i <= dayNum; i++) {
+    for (let i = 1; i <= dayNum; i++) {
       const option = document.createElement("option");
       option.textContent = i;
       daySelect.appendChild(option);
