@@ -1,0 +1,23 @@
+.main-layout{
+    height: 100%;
+    width: 100vw;
+    background-color:white ;
+}
+.layout{
+    height: 100%;
+    width: 90%;
+    background-color:white ;
+    margin-top: 30px;
+    margin-left: 140px;
+}
+
+.select{
+    height: 20px;
+    width: 205px;
+    
+}
+#eye-icon{
+    position: relative;
+    top: -30px;
+    left:600px
+}

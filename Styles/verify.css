@@ -1,0 +1,30 @@
+.otp-layout{
+    margin-top: 180px;
+    margin-left: 120px;
+}
+#input-field{
+    margin-right: 20px;
+    color: orange;
+    background-color: white;
+    box-shadow: whitesmoke;
+}
+.btn-grp{
+    margin-top: 40px;
+}
+
+.button{
+    padding: 6px;
+    border-radius: 5px;
+    width: 340px;
+    color:white;
+   background-color: orange;
+   border: none;
+   border-radius: 5px;
+}
+.resend-otp{
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.form-control{
+    margin-right: 20px;
+}

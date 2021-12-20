@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
-import { Provider } from 'react-redux';
-import rootReducer from '../src/store/reducer';
-import { createStore } from 'redux';
-import ComponentA from './ComponentA';
-import ComponentB from './ComponentB';
+import React from 'react';
+// import { Provider } from 'react-redux';
+// import rootReducer from '../src/store/reducer';
+// import { createStore } from 'redux';
+import Landing from './Landing';
 
-const store = createStore(rootReducer);
+// const store = createStore(rootReducer);
 
 function App() {
-    const [ss,setSs] =useState(false);
     return (
-        <Provider store={store}>
-            <h1>hello iam kiran</h1>
-            {!ss?
-            <ComponentA setSs={setSs}/>:
-            <ComponentB setSs={setSs}/>
-            }
-        </Provider>
+        <div>
+          <Landing/>
+        </div>
+        
+        // <Provider store={store}>
+        // </Provider>
 
     )
 }
-
 export default App;

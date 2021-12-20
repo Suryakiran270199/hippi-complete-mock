@@ -1,0 +1,25 @@
+.landing-layout{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    height: 80px;
+}
+.side-nav{
+height: 90vh;
+width: 100px;
+background-color:  orange;
+}
+.data{
+    align-items: center;
+    margin-top: 200px;
+    margin-left: 400px;
+}
+.head{
+    color:orange;
+    font-size: 100PX;
+}
+.link{
+    font-size: 20px;
+    margin-left: 1600px;
+}
